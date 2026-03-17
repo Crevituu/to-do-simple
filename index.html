@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto 003 — Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <header class="header">
+    <div class="header__label">PROJETO 003</div>
+    <h1 class="header__title">Lista de<br><span>Tarefas</span></h1>
+    <p class="header__sub">Sem servidor. Sem framework. Só você e suas tarefas.</p>
+  </header>
+
+  <main class="app">
+
+    <section class="input-section">
+      <div class="input-wrapper">
+        <input
+          type="text"
+          id="taskInput"
+          class="task-input"
+          placeholder="Nova tarefa..."
+          maxlength="80"
+          autocomplete="off"
+        />
+        <button id="addBtn" class="add-btn" aria-label="Adicionar tarefa">
+          <span class="add-btn__icon">+</span>
+          <span class="add-btn__text">ADD</span>
+        </button>
+      </div>
+      <div class="input-hint" id="inputHint">Pressione <kbd>Enter</kbd> ou clique em ADD</div>
+    </section>
+
+    <section class="stats-bar">
+      <div class="stat">
+        <span class="stat__num" id="totalCount">0</span>
+        <span class="stat__label">total</span>
+      </div>
+      <div class="stat__divider">/</div>
+      <div class="stat">
+        <span class="stat__num stat__num--done" id="doneCount">0</span>
+        <span class="stat__label">concluídas</span>
+      </div>
+      <div class="stat__divider">/</div>
+      <div class="stat">
+        <span class="stat__num stat__num--pending" id="pendingCount">0</span>
+        <span class="stat__label">pendentes</span>
+      </div>
+      <button id="clearDoneBtn" class="clear-btn" title="Remover concluídas">
+        ✕ LIMPAR CONCLUÍDAS
+      </button>
+    </section>
+
+    <ul class="task-list" id="taskList">
+      <!-- tasks rendered by JS -->
+    </ul>
+
+    <div class="empty-state" id="emptyState">
+      <div class="empty-state__icon">◎</div>
+      <p>Nenhuma tarefa ainda.<br>Adicione algo acima.</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <span>HTML5 · CSS3 · JS · localStorage</span>
+    <span class="footer__dot">●</span>
+    <span>Dados salvos localmente</span>
+  </footer>
+
+  <script src="todo.js"></script>
+</body>
+</html>
